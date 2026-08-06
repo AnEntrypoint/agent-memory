@@ -4,6 +4,10 @@ node_modules/
 # Runtime workspace
 workspace/
 
+# gm-plugkit spool/runtime state
+.gm/
+.agentplug-kv/
+
 # Environment variables
 .env
 
