@@ -9,6 +9,22 @@
 
 ---
 
+## [Unreleased] — 2026-08-06
+
+### 🔧 Build fix
+
+- `MemoryCore`'s `build:seed-v2` script no longer hard-fails `npm run build`
+  (and therefore `npm pack`/`prepack`) when `scripts/seed-v2/` source is
+  absent from the checkout — it now matches `bin/seed-v2.mjs`'s own
+  graceful dist-then-source-then-error fallback instead of crashing the
+  whole package build over one missing optional dev script.
+
+### 📦 Publishing
+
+- Repository content published to `AnEntrypoint/agent-memory` for
+  packaging as a `gm` skill (`agent-memory`), covering MemoryCore,
+  MemoryKnowledge, MemoryPanel, and MemoryProxy.
+
 ## [2.0.0] — 2026-08-03
 
 > **产品定位**：让 Agent 的经验、文档、代码沉淀成可复用资产，让下一位 Agent
