@@ -22,6 +22,8 @@
 
 ---
 
+> **Fork notice:** this repository is published at [github.com/AnEntrypoint/agent-memory](https://github.com/AnEntrypoint/agent-memory) — this fork's `origin` remote points here, not at the upstream `TencentCloud/TencentDB-Agent-Memory` repository.
+
 > **Latest:** Team Memory Beta is evolving quickly — install it and start exploring in minutes.
 
 <td>

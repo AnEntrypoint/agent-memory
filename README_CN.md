@@ -22,6 +22,8 @@
 
 ---
 
+> **Fork 说明：** 本仓库发布于 [github.com/AnEntrypoint/agent-memory](https://github.com/AnEntrypoint/agent-memory) —— 该 fork 的 `origin` 远程仓库指向此处，而非上游的 `TencentCloud/TencentDB-Agent-Memory`。
+
 > **最新：** Team Memory Beta 版本正在快速迭代，简单安装就能玩。
 
 <td>
