@@ -10,7 +10,6 @@ workspace/
 .agentplug/
 
 # Environment variables
-.env
 
 # Test caches
 __tests__/soak/.model-cache/
@@ -62,7 +61,6 @@ sdk/python/*.egg-info/
 .vite/
 
 # Environment (already covered above, explicit for clarity)
-.env.*
 !.env.example
 
 # offload_server 真值配置（含 tdai kernel Bearer），按 .example 自建
@@ -116,6 +114,9 @@ MemoryCore/scripts/tests/
 # Backup files
 *.bak
 
+# MSYS2/Windows subprocess crash dumps
+*.stackdump
+
 # self-implement-wiki e2e 产物（人工查看用，不入库）
 docs/knowledge/self-implement-wiki/_e2e-output/
 
@@ -128,3 +129,4 @@ coverage/
 **/coverage/
 
 
+config.bat
