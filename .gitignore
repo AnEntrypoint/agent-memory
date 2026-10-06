@@ -130,4 +130,4 @@ data/tdai-memory.db
 coverage/
 **/coverage/
 
-
+config.bat
