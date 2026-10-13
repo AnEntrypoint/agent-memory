@@ -593,11 +593,16 @@ async function main(): Promise<void> {
   let importedMessages = 0;
   let writeCount = 0;
 
-  outer: for (const project of selected) {
+  let traceLimitReached = false;
+  for (const project of selected) {
+    if (traceLimitReached) break;
     const traces = await opik.traces(project);
     console.log(`[project] ${project.name} (${project.id}) traces=${traces.length}`);
     for (const trace of traces) {
-      if (opts.maxTraces > 0 && seenTraces >= opts.maxTraces) break outer;
+      if (opts.maxTraces > 0 && seenTraces >= opts.maxTraces) {
+        traceLimitReached = true;
+        break;
+      }
       seenTraces++;
       const messages = extractMessages(trace, opts.includeSystem);
       if (messages.length === 0) {

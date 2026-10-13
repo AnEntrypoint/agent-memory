@@ -62,7 +62,8 @@ export function graphMultiHopSearch(
     let capped = best.size >= maxNodes;
     for (let h = 1; h <= maxHop && frontier.length > 0 && !capped; h++) {
       const nextFrontier: GraphSearchHit[] = [];
-      outer: for (const cur of frontier) {
+      for (const cur of frontier) {
+        if (capped) break;
         const viaLabel = (graph.getNodeAttribute(cur.id, "label") as string | undefined) ?? cur.id;
         for (const nb of graph.neighbors(cur.id)) {
           // Seeds are frozen at hop=0 with BM25 score (PRD AC-1).
@@ -75,7 +76,7 @@ export function graphMultiHopSearch(
           best.set(nb, hit);
           // Only push to frontier if first time visited; later upgrades reuse the same hop layer.
           if (!existing) nextFrontier.push(hit);
-          if (best.size >= maxNodes) { capped = true; break outer; }
+          if (best.size >= maxNodes) { capped = true; break; }
         }
       }
       frontier = nextFrontier;
